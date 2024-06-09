@@ -1,6 +1,5 @@
 import unittest
 from maze import Maze
-from cell import Cell
 
 
 class Tests(unittest.TestCase):
@@ -26,6 +25,16 @@ class Tests(unittest.TestCase):
         )
         self.assertEqual(
             m1._cells[num_cols - 1][num_rows - 1].has_bottom_wall,
+            False,
+        )
+
+    def test_reset_cells_visited(self):
+        num_cols, num_rows = 12, 10
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
+        for col in m1._cells:
+            for cell in col:
+                self.assertEqual(
+                    cell.visited,
             False,
         )
 
