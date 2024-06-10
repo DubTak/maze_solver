@@ -35,9 +35,8 @@ class Tests(unittest.TestCase):
             for cell in col:
                 self.assertEqual(
                     cell.visited,
-            False,
-        )
-
+                    False,
+                )
 
 
 if __name__ == '__main__':
